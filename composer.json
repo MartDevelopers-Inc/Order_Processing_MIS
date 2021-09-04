@@ -1,0 +1,11 @@
+{
+    "require": {
+        "phpunit/php-code-coverage": "^9.2",
+        "phpmailer/phpmailer": "^6.5",
+        "egulias/email-validator": "^3.1",
+        "phpseclib/phpseclib": "^3.0",
+        "stripe/stripe-php": "^7.92",
+        "ruflin/elastica": "^7.1",
+        "tecnickcom/tcpdf": "^6.4"
+    }
+}
