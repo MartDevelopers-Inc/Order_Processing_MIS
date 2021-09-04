@@ -32,13 +32,38 @@
 	* Pass Session Variables 
 */
 
-function checklogin()
+function admin_checklogin()
 {
-	if ((strlen($_SESSION['id']) == 0)) {
+	if ((strlen($_SESSION['admin_id']) == 0)) {
 		$host = $_SERVER['HTTP_HOST'];
 		$uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
 		$extra = "../index";
-		$_SESSION["id"] = "";
+		$_SESSION["admin_id"] = "";
+		header("Location: http://$host$uri/$extra");
+	}
+}
+
+
+/* Supplier Check Login */
+function suppplier_checklogin()
+{
+	if ((strlen($_SESSION['s_id']) == 0)) {
+		$host = $_SERVER['HTTP_HOST'];
+		$uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+		$extra = "../index";
+		$_SESSION["s_id"] = "";
+		header("Location: http://$host$uri/$extra");
+	}
+}
+
+/* Customer Checklogin */
+function customer_checklogin()
+{
+	if ((strlen($_SESSION['c_id']) == 0)) {
+		$host = $_SERVER['HTTP_HOST'];
+		$uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+		$extra = "../index";
+		$_SESSION["c_id"] = "";
 		header("Location: http://$host$uri/$extra");
 	}
 }
