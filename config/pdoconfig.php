@@ -1,6 +1,11 @@
 <?php
 /*
- * Created on Mon Aug 09 2021
+ * Created on Sat Sep 04 2021
+ *
+ * Mart Developers Inc
+ * https://martdev.info
+ * martdevelopers254@gmail.com
+ * +254 740 847 563 / +254 737 229 776
  *
  * The MIT License (MIT)
  * Copyright (c) 2021 Devlan Inc
@@ -21,6 +26,7 @@
  */
 
 
+
 /* PDO Database Connection File - Mainly Used When Loading Ajaxes   */
 
 
@@ -28,13 +34,13 @@
 $DB_host = "localhost";
 
 /* Database User */
-$DB_user = "";
+$DB_user = "root";
 
 /* Database Password */
 $DB_pass = "";
 
 /* Database Name */
-$DB_name = "";
+$DB_name = "order_processing";
 
 /* Init Connection */
 try {

@@ -1,6 +1,11 @@
 <?php
 /*
- * Created on Mon Aug 09 2021
+ * Created on Sat Sep 04 2021
+ *
+ * Mart Developers Inc
+ * https://martdev.info
+ * martdevelopers254@gmail.com
+ * +254 740 847 563 / +254 737 229 776
  *
  * The MIT License (MIT)
  * Copyright (c) 2021 Devlan Inc
@@ -27,14 +32,14 @@
 $host = "localhost";
 
 /*Username */
-$dbuser = "";
+$dbuser = "root";
 
 /* Password */
 $dbpass = "";
 
 /* Database Name */
 
-$db = "";
+$db = "order_processing";
 
 /* Pass Connection Variables To Mysqli Function */
 $mysqli = new mysqli($host, $dbuser, $dbpass, $db);
