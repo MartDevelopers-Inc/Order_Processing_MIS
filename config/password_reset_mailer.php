@@ -130,7 +130,7 @@ while ($sys_mailer = $res->fetch_object()) {
                         </tr>
                         <tr>
                             <td style="text-align:center;">
-                                <p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;">&copy; ' . date('Y') . ' <strong> iResturant ERP. A <a href="https://martdev.info/"> MartDevelopers Inc </a> Production</strong></p>
+                                <p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;">&copy; ' . date('Y') . ' <strong> Order Processing System. A <a href="https://martdev.info/"> MartDevelopers Inc </a> Production</strong></p>
                             </td>
                         </tr>
                         <tr>

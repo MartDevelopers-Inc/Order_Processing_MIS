@@ -38,7 +38,7 @@ if (isset($_POST['Reset_Password'])) {
         $error = 1;
         $err = "Enter your E-mail";
     }
-    $query = mysqli_query($mysqli, "SELECT * from `admin` WHERE admin_email='" . $admin_email . "'");
+    $query = mysqli_query($mysqli, "SELECT * from `admin` WHERE admin_email='" . $email . "'");
     $num_rows = mysqli_num_rows($query);
 
     if ($num_rows > 0) {
@@ -76,7 +76,7 @@ require_once('../partials/head.php');
 
                 <form method="post">
                     <div class="input-group mb-3">
-                        <input type="text" name="email" class="form-control" placeholder="Login Username">
+                        <input type="text" name="email" class="form-control" placeholder="Email">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user-tag"></span>
