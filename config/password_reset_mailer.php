@@ -38,23 +38,23 @@ require '../vendor/autoload.php';
 $mail = new PHPMailer\PHPMailer\PHPMailer();
 
 /* Load STMP Settings From A Custom Database Table */
-$ret = ""; //Custom SQL
+$ret = " SELECT * FROM `mailer` "; //Custom SQL
 $stmt = $mysqli->prepare($ret);
 $stmt->execute(); //ok
 $res = $stmt->get_result();
 while ($sys_mailer = $res->fetch_object()) {
 
-    $mail->setFrom($sys_mailer->mail_from);
+    $mail->setFrom($sys_mailer->mailer_mail_from_email);
     $mail->addAddress($email);
-    $mail->FromName = $sys_mailer->mail_from_name;
+    $mail->FromName = $sys_mailer->mailer_mail_from_name;
     $mail->isHTML(true);
     $mail->IsSMTP();
-    $mail->SMTPSecure = $sys_mailer->protocol;
-    $mail->Host = $sys_mailer->host;
+    $mail->SMTPSecure = $sys_mailer->mailer_protocol;
+    $mail->Host = $sys_mailer->mailer_host;
     $mail->SMTPAuth = true;
-    $mail->Port = $sys_mailer->port;
-    $mail->Username = $sys_mailer->username;
-    $mail->Password = $sys_mailer->password;
+    $mail->Port = $sys_mailer->mailer_port;
+    $mail->Username = $sys_mailer->mailer_username;
+    $mail->Password = $sys_mailer->mailer_password;
     $mail->Subject = 'Password Reset';
     /* Custom Mail Body */
     $mail->Body = '
@@ -115,7 +115,7 @@ while ($sys_mailer = $res->fetch_object()) {
                                                <br>
                                                <br>
                                                Kind Regards<br>
-                                               <b>Devlan Inc</b> <br>
+                                               <b>Mart Developers Inc</b> <br>
                                                <i>Where Innovation Meets Experience</i>
                                             </p>
                                         </td>
