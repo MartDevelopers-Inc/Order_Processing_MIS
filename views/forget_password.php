@@ -44,7 +44,7 @@ if (isset($_POST['Reset_Password'])) {
     if ($num_rows > 0) {
         $password = $sys_gen_password; /* Find This @config/codeGen.php */
         /* Mail User Plain Password */
-        $new_password = substr($password, 0, 10);
+        $new_password = $password;
         /* Hash Password  */
         $hashed_password = sha1(md5($new_password));
         $query = "UPDATE admin SET  admin_password=? WHERE  admin_email =?";
