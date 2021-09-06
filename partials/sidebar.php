@@ -36,7 +36,7 @@ while ($sys = $res->fetch_object()) {
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="home" class="brand-link">
-            <span class="brand-text font-weight-light">iOrder MIS</span>
+            <span class="brand-text font-weight-bold">FruitProcessing MIS</span>
         </a>
 
         <!-- Sidebar -->
@@ -62,7 +62,7 @@ while ($sys = $res->fetch_object()) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="company_categories" class="nav-link">
+                        <a href="product_categories" class="nav-link">
                             <i class="nav-icon fas fa-clipboard-list"></i>
                             <p>
                                 Product Categories
@@ -70,7 +70,7 @@ while ($sys = $res->fetch_object()) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="companies" class="nav-link">
+                        <a href="products" class="nav-link">
                             <i class="nav-icon fas fa-dice"></i>
                             <p>
                                 Products
@@ -78,7 +78,7 @@ while ($sys = $res->fetch_object()) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="jobs" class="nav-link">
+                        <a href="suppliers" class="nav-link">
                             <i class="nav-icon fas fa-briefcase"></i>
                             <p>
                                 Suppliers
@@ -86,15 +86,15 @@ while ($sys = $res->fetch_object()) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="jobs" class="nav-link">
-                            <i class="nav-icon fas fa-briefcase"></i>
+                        <a href="shipping_agents" class="nav-link">
+                            <i class="nav-icon fas fa-shipping-fast"></i>
                             <p>
                                 Shipping Agents
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="students" class="nav-link">
+                        <a href="customers" class="nav-link">
                             <i class="nav-icon fas fa-users"></i>
                             <p>
                                 Customers
@@ -102,7 +102,7 @@ while ($sys = $res->fetch_object()) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="job_applications" class="nav-link">
+                        <a href="orders" class="nav-link">
                             <i class="nav-icon fas fa-file-signature"></i>
                             <p>
                                 Orders
@@ -111,22 +111,22 @@ while ($sys = $res->fetch_object()) {
                     </li>
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
+                            <i class="nav-icon fas fa-cogs"></i>
                             <p>
                                 Settings
                                 <i class="fas fa-angle-left right"></i>
-                                <span class="badge badge-info right">5</span>
+                                <span class="badge badge-info right">2</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="reports_companies" class="nav-link">
+                                <a href="settings_stmp_mailer" class="nav-link">
                                     <i class="fas fa-angle-right nav-icon"></i>
                                     <p>STMP Mailer</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="reports_jobs" class="nav-link">
+                                <a href="settings_system" class="nav-link">
                                     <i class="fas fa-angle-right nav-icon"></i>
                                     <p>System Settings</p>
                                 </a>
@@ -144,31 +144,31 @@ while ($sys = $res->fetch_object()) {
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="reports_companies" class="nav-link">
+                                <a href="reports_inventory" class="nav-link">
                                     <i class="fas fa-angle-right nav-icon"></i>
                                     <p>Inventory</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="reports_jobs" class="nav-link">
+                                <a href="reports_suppliers" class="nav-link">
                                     <i class="fas fa-angle-right nav-icon"></i>
                                     <p>Suppliers</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="reports_students" class="nav-link">
+                                <a href="reports_customers" class="nav-link">
                                     <i class="fas fa-angle-right nav-icon"></i>
                                     <p>Customers</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="reports_applications" class="nav-link">
+                                <a href="reports_shipping_agents" class="nav-link">
                                     <i class="fas fa-angle-right nav-icon"></i>
                                     <p>Shipping Agents</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="reports_shortlisted" class="nav-link">
+                                <a href="reports_orders" class="nav-link">
                                     <i class="fas fa-angle-right nav-icon"></i>
                                     <p>Orders</p>
                                 </a>
