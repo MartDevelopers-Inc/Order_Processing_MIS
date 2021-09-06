@@ -151,27 +151,43 @@ require_once('../partials/head.php');
                                                 </thead>
                                                 <tbody>
                                                     <?php
-                                                    $ret = "SELECT * FROM job j INNER JOIN company c ON c.Company_id = j.Job_Company_id ";
+                                                    $today = date('d M Y');
+                                                    $ret = "SELECT * FROM orders o 
+                                                    INNER JOIN products p ON p.p_id = o.o_p_id
+                                                    INNER JOIN product_categories pc ON pc.pc_id = p.p_pc_id
+                                                    INNER JOIN supplier s ON s.sup_id = o.o_s_id
+                                                    INNER JOIN shipping_agent sa ON sa.sa_id = o.o_sa_id
+                                                    INNER JOIN customer c ON c.cus_id = o.o_c_id
+                                                    WHERE o.o_date = '$today'
+                                                    ";
                                                     $stmt = $mysqli->prepare($ret);
                                                     $stmt->execute(); //ok
                                                     $res = $stmt->get_result();
-                                                    while ($jobs = $res->fetch_object()) {
+                                                    while ($orders = $res->fetch_object()) {
                                                     ?>
                                                         <tr>
-                                                            <td><?php echo $jobs->Job_title; ?></td>
-                                                            <td><?php echo $jobs->Job_Category; ?></td>
                                                             <td>
-                                                                Name: <?php echo $jobs->Company_name; ?><br>
-                                                                Location: <?php echo $jobs->Company_location; ?><br>
-                                                                Contact : <?php echo $jobs->Company_contact; ?><br>
-                                                                Email : <?php echo $jobs->Company_email; ?>
+                                                                Name: <?php echo $orders->p_name; ?><br>
+                                                                Category: <?php echo $orders->pc_name; ?>
                                                             </td>
-                                                            <td><?php echo $jobs->Job_location; ?></td>
                                                             <td>
-                                                                Application Date: <?php echo date('d M Y', strtotime($jobs->Job_apply_date)); ?><br>
-                                                                Closing Date :<?php echo date('d M Y', strtotime($jobs->Job_Last_application_date)); ?>
+                                                                Name: <?php echo $orders->sup_name; ?><br>
+                                                                Contact: <?php echo $orders->sup_mobile; ?><br>
+                                                                Email: <?php echo $orders->sup_email; ?>
                                                             </td>
-                                                            <td><?php echo $jobs->Job_No_of_vacancy; ?></td>
+                                                            <td>
+                                                                Name: <?php echo $orders->sa_name; ?><br>
+                                                                Contact : <?php echo $orders->sa_mobile; ?><br>
+                                                                Email : <?php echo $orders->sa_email; ?>
+                                                            </td>
+                                                            <td>
+                                                                Name: <?php echo $orders->cus_name; ?><br>
+                                                                Contact : <?php echo $orders->cus_mobile; ?><br>
+                                                                Email : <?php echo $orders->cus_email; ?>
+                                                            </td>
+                                                            <th>
+                                                                <?php echo $orders->o_details; ?>
+                                                            </th>
                                                         </tr>
                                                     <?php
                                                     } ?>
