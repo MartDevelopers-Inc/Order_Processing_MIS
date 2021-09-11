@@ -179,14 +179,14 @@ require_once('../partials/head.php');
                                     while ($categories = $res->fetch_object()) {
                                     ?>
                                         <tr>
-                                            <td><?php echo $categories->Category_name; ?></td>
-                                            <td><?php echo $categories->Category_desc; ?></td>
+                                            <td><?php echo $categories->pc_name; ?></td>
+                                            <td><?php echo $categories->pc_desc; ?></td>
                                             <td>
-                                                <a class="badge badge-primary" data-toggle="modal" href="#edit-<?php echo $categories->Category_id; ?>">
+                                                <a class="badge badge-primary" data-toggle="modal" href="#edit-<?php echo $categories->pc_id; ?>">
                                                     <i class="fas fa-edit"></i>
                                                     Update
                                                 </a>
-                                                <a class="badge badge-danger" data-toggle="modal" href="#delete-<?php echo $categories->Category_id; ?>">
+                                                <a class="badge badge-danger" data-toggle="modal" href="#delete-<?php echo $categories->pc_id; ?>">
                                                     <i class="fas fa-trash"></i>
                                                     Delete
                                                 </a>
