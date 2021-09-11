@@ -191,7 +191,7 @@ require_once('../partials/head.php');
                                                     Delete
                                                 </a>
                                                 <!-- Update Modal -->
-                                                <div class="modal fade" id="edit-<?php echo $categories->Category_id; ?>">
+                                                <div class="modal fade" id="edit-<?php echo $categories->pc_id; ?>">
                                                     <div class="modal-dialog  modal-lg">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -205,13 +205,13 @@ require_once('../partials/head.php');
                                                                     <div class="card-body">
                                                                         <div class="row">
                                                                             <div class="form-group col-md-12">
-                                                                                <label for="">Company Category Name</label>
-                                                                                <input type="text" required value="<?php echo $categories->Category_name; ?>" name="Category_name" class="form-control">
-                                                                                <input type="hidden" required value="<?php echo $categories->Category_id; ?>" name="Category_id" class="form-control">
+                                                                                <label for=""> Category Name</label>
+                                                                                <input type="text" required value="<?php echo $categories->pc_name; ?>" name="pc_name" class="form-control">
+                                                                                <input type="hidden" required value="<?php echo $categories->pc_id; ?>" name="pc_id" class="form-control">
                                                                             </div>
                                                                             <div class="form-group col-md-12">
-                                                                                <label for="exampleInputPassword1">Company Category Details</label>
-                                                                                <textarea name="Category_desc" rows="5" class="form-control"><?php echo $categories->Category_desc; ?></textarea>
+                                                                                <label for="exampleInputPassword1">Category Details</label>
+                                                                                <textarea name="pc_desc" rows="5" class="form-control"><?php echo $categories->pc_desc; ?></textarea>
                                                                             </div>
                                                                         </div>
                                                                     </div>
