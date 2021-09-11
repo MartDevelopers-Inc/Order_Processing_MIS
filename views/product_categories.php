@@ -77,13 +77,13 @@ if (isset($_POST['update_category'])) {
 /* Delete Company Category */
 if (isset($_GET['delete'])) {
     $delete = $_GET['delete'];
-    $adn = "DELETE FROM company_categories WHERE Category_id=?";
+    $adn = "DELETE FROM product_categories WHERE pc_id=?";
     $stmt = $mysqli->prepare($adn);
     $stmt->bind_param('s', $delete);
     $stmt->execute();
     $stmt->close();
     if ($stmt) {
-        $success = "Deleted" && header("refresh:1; url=company_categories");
+        $success = "Deleted" && header("refresh:1; url=product_categories");
     } else {
         $info = "Please Try Again Or Try Later";
     }
@@ -112,9 +112,9 @@ require_once('../partials/head.php');
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="home">Home</a></li>
-                                <li class="breadcrumb-item"><a href="home">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Company Categories</li>
+                                <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
+                                <li class="breadcrumb-item"><a href="">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Product Categories</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -124,7 +124,7 @@ require_once('../partials/head.php');
             <section class="content">
                 <div class="container-fluid">
                     <div class="text-right">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add_modal">Add Company Category</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add_modal">Add Product Category</button>
                     </div>
                     <hr>
                     <!-- Add Modal -->
@@ -142,12 +142,12 @@ require_once('../partials/head.php');
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="form-group col-md-12">
-                                                    <label for="">Company Category Name</label>
-                                                    <input type="text" required name="Category_name" class="form-control">
+                                                    <label for="">Category Name</label>
+                                                    <input type="text" required name="pc_name" class="form-control">
                                                 </div>
                                                 <div class="form-group col-md-12">
-                                                    <label for="exampleInputPassword1">Company Category Details</label>
-                                                    <textarea name="Category_desc" rows="5" class="form-control"></textarea>
+                                                    <label for="exampleInputPassword1">Category Details</label>
+                                                    <textarea name="pc_desc" rows="5" class="form-control"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -172,7 +172,7 @@ require_once('../partials/head.php');
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $ret = "SELECT * FROM company_categories ";
+                                    $ret = "SELECT * FROM product_categories ";
                                     $stmt = $mysqli->prepare($ret);
                                     $stmt->execute(); //ok
                                     $res = $stmt->get_result();
