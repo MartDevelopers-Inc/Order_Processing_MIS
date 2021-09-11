@@ -226,7 +226,7 @@ require_once('../partials/head.php');
                                                 <!-- End Modal -->
 
                                                 <!-- Delete Modal -->
-                                                <div class="modal fade" id="delete-<?php echo $categories->Category_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="delete-<?php echo $categories->pc_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -236,11 +236,11 @@ require_once('../partials/head.php');
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body text-center text-danger">
-                                                                <h4>Delete <?php echo $categories->Category_name; ?> ?</h4>
+                                                                <h4>Delete <?php echo $categories->pc_name; ?> ?</h4>
                                                                 <br>
-                                                                <p>Heads Up, You are about to delete <?php echo $categories->Category_name; ?>. This action is irrevisble.</p>
+                                                                <p>Heads Up, You are about to delete <?php echo $categories->pc_name; ?>. This action is irrevisble.</p>
                                                                 <button type="button" class="text-center btn btn-success" data-dismiss="modal">No</button>
-                                                                <a href="company_categories?delete=<?php echo $categories->Category_id; ?>" class="text-center btn btn-danger"> Delete </a>
+                                                                <a href="product_categories?delete=<?php echo $categories->pc_id; ?>" class="text-center btn btn-danger"> Delete </a>
                                                             </div>
                                                         </div>
                                                     </div>
