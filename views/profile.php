@@ -45,7 +45,7 @@ if (isset($_POST['Update_Auth'])) {
     if (mysqli_num_rows($res) > 0) {
         $row = mysqli_fetch_assoc($res);
 
-        if ($old_password != $row['Login_password']) {
+        if ($old_password != $row['admin_password']) {
             $err =  "Please Enter Correct Old Password";
         } elseif ($new_password != $confirm_password) {
             $err = "Confirmation Password Does Not Match";
