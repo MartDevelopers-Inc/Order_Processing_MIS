@@ -58,17 +58,17 @@ if (isset($_POST['add_category'])) {
 
 /* Update Company Category */
 if (isset($_POST['update_category'])) {
-    $Category_name = $_POST['Category_name'];
-    $Category_desc = $_POST['Category_desc'];
-    $Category_id = $_POST['Category_id'];
+    $pc_name = $_POST['pc_name'];
+    $pc_desc = $_POST['pc_desc'];
+    $pc_id = $_POST['pc_id'];
 
-    $query = "UPDATE  company_categories SET  Category_name =?, Category_desc =? WHERE Category_id = ? ";
+    $query = "UPDATE  product_categories SET  pc_name =?, pc_desc =? WHERE pc_id = ? ";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('sss', $Category_name, $Category_desc, $Category_id);
+    $rc = $stmt->bind_param('sss', $pc_name, $pc_desc, $pc_id);
     $stmt->execute();
 
     if ($stmt) {
-        $success = "$Category_name Updated";
+        $success = "$pc_name Updated";
     } else {
         $info = "Please Try Again Or Try Later";
     }
