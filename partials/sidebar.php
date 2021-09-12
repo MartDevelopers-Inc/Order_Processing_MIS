@@ -46,7 +46,7 @@ while ($sys = $res->fetch_object()) {
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                     <li class="nav-item">
-                        <a href="home" class="nav-link">
+                        <a href="dashboard" class="nav-link">
                             <i class="nav-icon fas fa-home"></i>
                             <p>
                                 Home
