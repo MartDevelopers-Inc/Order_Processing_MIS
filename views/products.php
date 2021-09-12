@@ -163,7 +163,7 @@ require_once('../partials/head.php');
                                                         $res = $stmt->get_result();
                                                         while ($categories = $res->fetch_object()) {
                                                         ?>
-                                                            <option value="<?php echo $categories->c_id; ?>"><?php echo $categories->c_name; ?></option>
+                                                            <option value="<?php echo $categories->pc_id; ?>"><?php echo $categories->pc_name; ?></option>
                                                         <?php
                                                         } ?>
                                                     </select>
@@ -206,7 +206,7 @@ require_once('../partials/head.php');
                                     ?>
                                         <tr>
                                             <td><?php echo $product->p_name; ?></td>
-                                            <td><?php echo $product->c_name; ?></td>
+                                            <td><?php echo $product->pc_name; ?></td>
                                             <td><?php echo $product->p_quantity; ?></td>
                                             <td><?php echo $product->p_details; ?></td>
                                             <td>
@@ -232,12 +232,12 @@ require_once('../partials/head.php');
                                                                 <form method="post" enctype="multipart/form-data" role="form">
                                                                     <div class="card-body">
                                                                         <div class="row">
-                                                                            <div class="form-group col-md-4">
+                                                                            <div class="form-group col-md-6">
                                                                                 <label for="">Name</label>
                                                                                 <input type="text" required name="p_name" value="<?php echo $product->p_name; ?>" class="form-control">
                                                                                 <input type="hidden" required name="p_id" value="<?php echo $product->p_id; ?>" class="form-control">
                                                                             </div>
-                                                                            <div class="form-group col-md-4">
+                                                                            <div class="form-group col-md-6">
                                                                                 <label for="">Quantity</label>
                                                                                 <input type="text" required value="<?php echo $product->p_quantity; ?>" name="p_quantity" class="form-control">
                                                                             </div>
