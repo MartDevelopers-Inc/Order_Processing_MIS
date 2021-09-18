@@ -186,12 +186,11 @@ require_once('../partials/head.php');
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $ret = "SELECT * FROM products p 
-                                    INNER JOIN product_categories pc ON p.p_pc_id = pc.pc_id";
+                                    $ret = "SELECT * FROM supplier ";
                                     $stmt = $mysqli->prepare($ret);
                                     $stmt->execute(); //ok
                                     $res = $stmt->get_result();
-                                    while ($product = $res->fetch_object()) {
+                                    while ($supplier = $res->fetch_object()) {
                                     ?>
                                         <tr>
                                             <td><?php echo $product->p_name; ?></td>
