@@ -52,7 +52,7 @@ if (isset($_POST['add_supplier'])) {
         $stmt->execute();
 
         if ($stmt) {
-            $success = "$su_name Added";
+            $success = "$sup_name Added";
         } else {
             $info = "Please Try Again Or Try Later";
         }
