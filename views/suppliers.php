@@ -113,13 +113,13 @@ require_once('../partials/head.php');
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-bold"></h1>
+                            <h1 class="m-0 text-bold">Suppliers</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
                                 <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Products</li>
+                                <li class="breadcrumb-item active">Suppliers</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -129,7 +129,7 @@ require_once('../partials/head.php');
             <section class="content">
                 <div class="container-fluid">
                     <div class="text-right">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add_modal">Add Product</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add_modal">Add Supplier</button>
                     </div>
                     <hr>
                     <!-- Add Modal -->
@@ -146,37 +146,26 @@ require_once('../partials/head.php');
                                     <form method="post" enctype="multipart/form-data" role="form">
                                         <div class="card-body">
                                             <div class="row">
-                                                <div class="form-group col-md-4">
+                                                <div class="form-group col-md-6">
                                                     <label for="">Name</label>
-                                                    <input type="text" required name="p_name" class="form-control">
+                                                    <input type="text" required name="sup_name" class="form-control">
                                                 </div>
-                                                <div class="form-group col-md-4">
-                                                    <label for="">Quantity</label>
-                                                    <input type="text" required name="p_quantity" class="form-control">
+                                                <div class="form-group col-md-6">
+                                                    <label for="">Phone Number</label>
+                                                    <input type="text" required name="sup_phone" class="form-control">
                                                 </div>
-                                                <div class="form-group col-md-4">
-                                                    <label for="">Product Category</label>
-                                                    <select type="text" required name="p_pc_id" class="form-control">
-                                                        <?php
-                                                        $ret = "SELECT * FROM product_categories ";
-                                                        $stmt = $mysqli->prepare($ret);
-                                                        $stmt->execute(); //ok
-                                                        $res = $stmt->get_result();
-                                                        while ($categories = $res->fetch_object()) {
-                                                        ?>
-                                                            <option value="<?php echo $categories->pc_id; ?>"><?php echo $categories->pc_name; ?></option>
-                                                        <?php
-                                                        } ?>
-                                                    </select>
+                                                <div class="form-group col-md-6">
+                                                    <label for="">Email</label>
+                                                    <input type="text" required name="sup_email" class="form-control">
                                                 </div>
-                                                <div class="form-group col-md-12">
-                                                    <label for="exampleInputPassword1"> Details</label>
-                                                    <textarea name="p_details" rows="5" class="form-control"></textarea>
+                                                <div class="form-group col-md-6">
+                                                    <label for="">Password</label>
+                                                    <input type="text" required name="sup_password" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="text-right">
-                                            <button type="submit" name="add_product" class="btn btn-primary">Submit</button>
+                                            <button type="submit" name="add_supplier" class="btn btn-primary">Submit</button>
                                         </div>
                                     </form>
                                 </div>
@@ -189,10 +178,9 @@ require_once('../partials/head.php');
                             <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Product Name</th>
-                                        <th>Category </th>
-                                        <th>Quantity</th>
-                                        <th>Details </th>
+                                        <th>Name</th>
+                                        <th>Contacts </th>
+                                        <th>Email</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
