@@ -152,7 +152,7 @@ require_once('../partials/head.php');
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="">Phone Number</label>
-                                                    <input type="text" required name="sup_phone" class="form-control">
+                                                    <input type="text" required name="sup_mobile" class="form-control">
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="">Email</label>
@@ -193,21 +193,20 @@ require_once('../partials/head.php');
                                     while ($supplier = $res->fetch_object()) {
                                     ?>
                                         <tr>
-                                            <td><?php echo $product->p_name; ?></td>
-                                            <td><?php echo $product->pc_name; ?></td>
-                                            <td><?php echo $product->p_quantity; ?></td>
-                                            <td><?php echo $product->p_details; ?></td>
+                                            <td><?php echo $supplier->sup_name; ?></td>
+                                            <td><?php echo $supplier->sup_mobile; ?></td>
+                                            <td><?php echo $supplier->sup_email; ?></td>
                                             <td>
-                                                <a class="badge badge-primary" data-toggle="modal" href="#edit-<?php echo $product->p_id; ?>">
+                                                <a class="badge badge-primary" data-toggle="modal" href="#edit-<?php echo $supplier->sup_id; ?>">
                                                     <i class="fas fa-edit"></i>
                                                     Update
                                                 </a>
-                                                <a class="badge badge-danger" data-toggle="modal" href="#delete-<?php echo $product->p_id; ?>">
+                                                <a class="badge badge-danger" data-toggle="modal" href="#delete-<?php echo $supplier->sup_id; ?>">
                                                     <i class="fas fa-trash"></i>
                                                     Delete
                                                 </a>
                                                 <!-- Update Modal -->
-                                                <div class="modal fade" id="edit-<?php echo $product->p_id; ?>">
+                                                <div class="modal fade" id="edit-<?php echo $supplier->sup_id; ?>">
                                                     <div class="modal-dialog  modal-lg">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -217,28 +216,7 @@ require_once('../partials/head.php');
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <form method="post" enctype="multipart/form-data" role="form">
-                                                                    <div class="card-body">
-                                                                        <div class="row">
-                                                                            <div class="form-group col-md-6">
-                                                                                <label for="">Name</label>
-                                                                                <input type="text" required name="p_name" value="<?php echo $product->p_name; ?>" class="form-control">
-                                                                                <input type="hidden" required name="p_id" value="<?php echo $product->p_id; ?>" class="form-control">
-                                                                            </div>
-                                                                            <div class="form-group col-md-6">
-                                                                                <label for="">Quantity</label>
-                                                                                <input type="text" required value="<?php echo $product->p_quantity; ?>" name="p_quantity" class="form-control">
-                                                                            </div>
-                                                                            <div class="form-group col-md-12">
-                                                                                <label for="exampleInputPassword1"> Details</label>
-                                                                                <textarea name="p_details" rows="5" class="form-control"><?php echo $product->p_details; ?></textarea>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="text-right">
-                                                                        <button type="submit" name="update_product" class="btn btn-primary">Submit</button>
-                                                                    </div>
-                                                                </form>
+                                                                
                                                             </div>
                                                         </div>
                                                     </div>
@@ -246,7 +224,7 @@ require_once('../partials/head.php');
                                                 <!-- End Modal -->
 
                                                 <!-- Delete Modal -->
-                                                <div class="modal fade" id="delete-<?php echo $product->p_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="delete-<?php echo $supplier->sup_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -256,11 +234,11 @@ require_once('../partials/head.php');
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body text-center text-danger">
-                                                                <h4>Delete <?php echo $product->p_name; ?> ?</h4>
+                                                                <h4>Delete <?php echo $supplier->sup_name; ?> ?</h4>
                                                                 <br>
-                                                                <p>Heads Up, You are about to delete <?php echo $product->p_name; ?>. This action is irrevisble.</p>
+                                                                <p>Heads Up, You are about to delete <?php echo $supplier->sup_name; ?>. This action is irrevisble.</p>
                                                                 <button type="button" class="text-center btn btn-success" data-dismiss="modal">No</button>
-                                                                <a href="products?delete=<?php echo $product->p_id; ?>" class="text-center btn btn-danger"> Delete </a>
+                                                                <a href="suppliers?delete=<?php echo $supplier->sup_id; ?>" class="text-center btn btn-danger"> Delete </a>
                                                             </div>
                                                         </div>
                                                     </div>
