@@ -79,16 +79,16 @@ if (isset($_POST['update_supplier'])) {
     }
 }
 
-/* Delete Company Category */
+/* Delete Supplier */
 if (isset($_GET['delete'])) {
     $delete = $_GET['delete'];
-    $adn = "DELETE FROM products WHERE p_id=?";
+    $adn = "DELETE FROM supplier WHERE sup_id=?";
     $stmt = $mysqli->prepare($adn);
     $stmt->bind_param('s', $delete);
     $stmt->execute();
     $stmt->close();
     if ($stmt) {
-        $success = "Deleted" && header("refresh:1; url=products");
+        $success = "Deleted" && header("refresh:1; url=suppliers");
     } else {
         $info = "Please Try Again Or Try Later";
     }
@@ -113,7 +113,7 @@ require_once('../partials/head.php');
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-bold">Products</h1>
+                            <h1 class="m-0 text-bold"></h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
