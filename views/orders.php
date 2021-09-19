@@ -168,7 +168,7 @@ require_once('../partials/head.php');
                                                         $res = $stmt->get_result();
                                                         while ($supplier = $res->fetch_object()) {
                                                         ?>
-                                                            <option value="<?php echo $customer->sup_id; ?>"><?php echo $customer->sup_name; ?></option>
+                                                            <option value="<?php echo $supplier->sup_id; ?>"><?php echo $supplier->sup_name; ?></option>
                                                         <?php
                                                         } ?>
                                                     </select>
@@ -203,7 +203,7 @@ require_once('../partials/head.php');
                                                         } ?>
                                                     </select>
                                                 </div>
-                                                <div class="form-group col-md-6">
+                                                <div class="form-group col-md-12">
                                                     <label for="">Order Quantity </label>
                                                     <input type="text" required name="o_quantity" class="form-control">
                                                 </div>
@@ -214,7 +214,7 @@ require_once('../partials/head.php');
                                             </div>
                                         </div>
                                         <div class="text-right">
-                                            <button type="submit" name="add_customer" class="btn btn-primary">Submit</button>
+                                            <button type="submit" name="add_order" class="btn btn-primary">Submit</button>
                                         </div>
                                     </form>
                                 </div>
@@ -269,9 +269,9 @@ require_once('../partials/head.php');
                                                 Contact : <?php echo $orders->cus_mobile; ?><br>
                                                 Email : <?php echo $orders->cus_email; ?>
                                             </td>
-                                            <th>
+                                            <td>
                                                 <?php echo $orders->o_details; ?>
-                                            </th>
+                                            </td>
                                             <td>
                                                 <a class="badge badge-primary" data-toggle="modal" href="#edit-<?php echo $orders->o_id; ?>">
                                                     <i class="fas fa-edit"></i>

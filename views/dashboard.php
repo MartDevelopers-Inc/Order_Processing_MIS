@@ -185,9 +185,9 @@ require_once('../partials/head.php');
                                                                 Contact : <?php echo $orders->cus_mobile; ?><br>
                                                                 Email : <?php echo $orders->cus_email; ?>
                                                             </td>
-                                                            <th>
+                                                            <td>
                                                                 <?php echo $orders->o_details; ?>
-                                                            </th>
+                                                            </td>
                                                         </tr>
                                                     <?php
                                                     } ?>
