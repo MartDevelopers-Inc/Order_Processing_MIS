@@ -303,7 +303,7 @@ require_once('../partials/head.php');
                                                                             <div class="form-group col-md-6">
                                                                                 <label for="">Order Status </label>
                                                                                 <select type="text" required name="o_status" class="form-control">
-                                                                                    <option><?php echo $order->o_status; ?></option>
+                                                                                    <option><?php echo $orders->o_status; ?></option>
                                                                                     <option>Pending</option>
                                                                                     <option>Processed</option>
                                                                                 </select>
