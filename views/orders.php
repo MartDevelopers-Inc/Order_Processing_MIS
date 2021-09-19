@@ -144,24 +144,72 @@ require_once('../partials/head.php');
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="form-group col-md-6">
-                                                    <label for="">Name</label>
-                                                    <input type="text" required name="cus_name" class="form-control">
+                                                    <label for="">Customer Name</label>
+                                                    <select type="text" required name="o_c_id" class="form-control">
+                                                        <?php
+                                                        $ret = "SELECT * FROM customer ";
+                                                        $stmt = $mysqli->prepare($ret);
+                                                        $stmt->execute(); //ok
+                                                        $res = $stmt->get_result();
+                                                        while ($customer = $res->fetch_object()) {
+                                                        ?>
+                                                            <option value="<?php echo $customer->cus_id; ?>"><?php echo $customer->cus_name; ?></option>
+                                                        <?php
+                                                        } ?>
+                                                    </select>
                                                 </div>
                                                 <div class="form-group col-md-6">
-                                                    <label for="">Phone Number</label>
-                                                    <input type="text" required name="cus_mobile" class="form-control">
+                                                    <label for="">Supplier Name</label>
+                                                    <select type="text" required name="o_s_id" class="form-control">
+                                                        <?php
+                                                        $ret = "SELECT * FROM supplier ";
+                                                        $stmt = $mysqli->prepare($ret);
+                                                        $stmt->execute(); //ok
+                                                        $res = $stmt->get_result();
+                                                        while ($supplier = $res->fetch_object()) {
+                                                        ?>
+                                                            <option value="<?php echo $customer->sup_id; ?>"><?php echo $customer->sup_name; ?></option>
+                                                        <?php
+                                                        } ?>
+                                                    </select>
                                                 </div>
                                                 <div class="form-group col-md-6">
-                                                    <label for="">Email</label>
-                                                    <input type="text" required name="cus_email" class="form-control">
+                                                    <label for="">Shipping Agent Name</label>
+                                                    <select type="text" required name="o_sa_id" class="form-control">
+                                                        <?php
+                                                        $ret = "SELECT * FROM shipping_agent ";
+                                                        $stmt = $mysqli->prepare($ret);
+                                                        $stmt->execute(); //ok
+                                                        $res = $stmt->get_result();
+                                                        while ($sa = $res->fetch_object()) {
+                                                        ?>
+                                                            <option value="<?php echo $sa->sa_id; ?>"><?php echo $sa->sa_name; ?></option>
+                                                        <?php
+                                                        } ?>
+                                                    </select>
                                                 </div>
                                                 <div class="form-group col-md-6">
-                                                    <label for="">Password</label>
-                                                    <input type="text" required name="cus_password" class="form-control">
+                                                    <label for="">Order Product Name</label>
+                                                    <select type="text" required name="o_p_id" class="form-control">
+                                                        <?php
+                                                        $ret = "SELECT * FROM products ";
+                                                        $stmt = $mysqli->prepare($ret);
+                                                        $stmt->execute(); //ok
+                                                        $res = $stmt->get_result();
+                                                        while ($p = $res->fetch_object()) {
+                                                        ?>
+                                                            <option value="<?php echo $p->p_id; ?>"><?php echo $p->p_name; ?></option>
+                                                        <?php
+                                                        } ?>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="">Order Quantity </label>
+                                                    <input type="text" required name="o_quantity" class="form-control">
                                                 </div>
                                                 <div class="form-group col-md-12">
-                                                    <label for="">Address</label>
-                                                    <textarea rows="3" type="text" required name="cus_adr" class="form-control"></textarea>
+                                                    <label for="">Order Details</label>
+                                                    <textarea rows="3" type="text" required name="o_details" class="form-control"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -176,113 +224,7 @@ require_once('../partials/head.php');
                     <!-- End Modal -->
                     <div class="row">
                         <div class="col-12">
-                            <table class="table table-bordered table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Contacts </th>
-                                        <th>Email</th>
-                                        <th>Address</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    $ret = "SELECT * FROM customer ";
-                                    $stmt = $mysqli->prepare($ret);
-                                    $stmt->execute(); //ok
-                                    $res = $stmt->get_result();
-                                    while ($supplier = $res->fetch_object()) {
-                                    ?>
-                                        <tr>
-                                            <td><?php echo $supplier->cus_name; ?></td>
-                                            <td><?php echo $supplier->cus_mobile; ?></td>
-                                            <td><?php echo $supplier->cus_email; ?></td>
-                                            <td><?php echo $supplier->cus_adr; ?></td>
-                                            <td>
-                                                <a class="badge badge-primary" data-toggle="modal" href="#edit-<?php echo $supplier->cus_id; ?>">
-                                                    <i class="fas fa-edit"></i>
-                                                    Update
-                                                </a>
-                                                <a class="badge badge-danger" data-toggle="modal" href="#delete-<?php echo $supplier->cus_id; ?>">
-                                                    <i class="fas fa-trash"></i>
-                                                    Delete
-                                                </a>
-                                                <!-- Update Modal -->
-                                                <div class="modal fade" id="edit-<?php echo $supplier->cus_id; ?>">
-                                                    <div class="modal-dialog  modal-lg">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h4 class="modal-title">Fill All Values </h4>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <form method="post" enctype="multipart/form-data" role="form">
-                                                                    <div class="card-body">
-                                                                        <div class="row">
-                                                                            <div class="form-group col-md-6">
-                                                                                <label for="">Name</label>
-                                                                                <input type="text" value="<?php echo $supplier->cus_name; ?>" required name="cus_name" class="form-control">
-                                                                            </div>
-                                                                            <div class="form-group col-md-6">
-                                                                                <label for="">Phone Number</label>
-                                                                                <input type="text" value="<?php echo $supplier->cus_mobile; ?>" required name="cus_mobile" class="form-control">
-                                                                            </div>
-                                                                            <div class="form-group col-md-6">
-                                                                                <label for="">Email</label>
-                                                                                <input type="text" value="<?php echo $supplier->cus_email; ?>" required name="cus_email" class="form-control">
-                                                                            </div>
-                                                                            <div class="form-group col-md-6">
-                                                                                <label for="">Password</label>
-                                                                                <input type="text" required name="cus_password" class="form-control">
-                                                                                <input type="hidden" value="<?php echo $supplier->cus_id; ?>" required name="cus_id" class="form-control">
-                                                                            </div>
-                                                                            <div class="form-group col-md-12">
-                                                                                <label for="">Address</label>
-                                                                                <textarea type="text" value="" required name="cus_adr" class="form-control"><?php echo $supplier->cus_adr; ?></textarea>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="text-right">
-                                                                        <button type="submit" name="update_customer" class="btn btn-primary">Submit</button>
-                                                                    </div>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- End Modal -->
-
-                                                <!-- Delete Modal -->
-                                                <div class="modal fade" id="delete-<?php echo $supplier->cus_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="exampleModalLabel">CONFIRM</h5>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body text-center text-danger">
-                                                                <h4>Delete <?php echo $supplier->cus_name; ?> ?</h4>
-                                                                <br>
-                                                                <p>Heads Up, You are about to delete <?php echo $supplier->cus_name; ?>. This action is irrevisble.</p>
-                                                                <button type="button" class="text-center btn btn-success" data-dismiss="modal">No</button>
-                                                                <a href="customers?delete=<?php echo $supplier->cus_id; ?>" class="text-center btn btn-danger"> Delete </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- End Modal -->
-                                            </td>
-                                        </tr>
-                                    <?php
-                                    }
-                                    ?>
-                                </tbody>
-                            </table>
+                            
                         </div>
                     </div>
                 </div>
