@@ -31,7 +31,7 @@ require_once('../config/config.php');
 require_once('../config/checklogin.php');
 admin_checklogin();
 /* Add */
-if (isset($_POST['ad-agent'])) {
+if (isset($_POST['add_shipping_agent'])) {
 
     $sa_name = $_POST['sa_name'];
     $sa_mobile = $_POST['sa_mobile'];
@@ -60,36 +60,36 @@ if (isset($_POST['ad-agent'])) {
     }
 }
 
-/* Update Supplier */
-if (isset($_POST['update_supplier'])) {
-    $sup_name = $_POST['sup_name'];
-    $sup_mobile = $_POST['sup_mobile'];
-    $sup_email = $_POST['sup_email'];
-    $sup_password = sha1(md5($_POST['sup_password']));
-    $sup_id = $_POST['sup_id'];
+/* Update Shipping Agent */
+if (isset($_POST['update_shipping_agent'])) {
+    $sa_name = $_POST['sa_name'];
+    $sa_mobile = $_POST['sa_mobile'];
+    $sa_email = $_POST['sa_email'];
+    $sa_adr = $_POST['sa_adr'];
+    $sa_id = $_POST['sa_id'];
 
-    $query = "UPDATE  supplier  SET  sup_name =?, sup_mobile =?, sup_email=?, sup_password = ? WHERE sup_id = ? ";
+    $query = "UPDATE  shipping_agent  SET  sa_name =?, sa_mobile =?, sa_email=?, sa_adr = ? WHERE sa_id = ? ";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('sssss', $sup_name, $sup_mobile, $sup_email, $sup_password, $sup_id);
+    $rc = $stmt->bind_param('sssss', $sa_name, $sa_mobile, $sa_email, $sa_adr, $sa_id);
     $stmt->execute();
 
     if ($stmt) {
-        $success = "$sup_name Updated";
+        $success = "$sa_name Updated";
     } else {
         $info = "Please Try Again Or Try Later";
     }
 }
 
-/* Delete Supplier */
+/* Delete Shipping Agent */
 if (isset($_GET['delete'])) {
     $delete = $_GET['delete'];
-    $adn = "DELETE FROM supplier WHERE sup_id=?";
+    $adn = "DELETE FROM shipping_agent WHERE sa_id=?";
     $stmt = $mysqli->prepare($adn);
     $stmt->bind_param('s', $delete);
     $stmt->execute();
     $stmt->close();
     if ($stmt) {
-        $success = "Deleted" && header("refresh:1; url=suppliers");
+        $success = "Deleted" && header("refresh:1; url=shipping_agents");
     } else {
         $info = "Please Try Again Or Try Later";
     }
