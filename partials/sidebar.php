@@ -109,7 +109,7 @@ while ($sys = $res->fetch_object()) {
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item has-treeview">
+                    <!-- <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-cogs"></i>
                             <p>
@@ -132,7 +132,7 @@ while ($sys = $res->fetch_object()) {
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
