@@ -60,21 +60,22 @@ if (isset($_POST['add_customer'])) {
     }
 }
 
-/* Update Supplier */
-if (isset($_POST['update_supplier'])) {
-    $sup_name = $_POST['sup_name'];
-    $sup_mobile = $_POST['sup_mobile'];
-    $sup_email = $_POST['sup_email'];
-    $sup_password = sha1(md5($_POST['sup_password']));
-    $sup_id = $_POST['sup_id'];
+/* Update Customer */
+if (isset($_POST['update_customer'])) {
+    $cus_name = $_POST['cus_name'];
+    $cus_mobile = $_POST['cus_mobile'];
+    $cus_email = $_POST['cus_email'];
+    $cus_adr = $_POST['cus_adr'];
+    $cus_password = sha1(md5($_POST['cus_password']));
+    $cus_id = $_POST['cus_id'];
 
-    $query = "UPDATE  supplier  SET  sup_name =?, sup_mobile =?, sup_email=?, sup_password = ? WHERE sup_id = ? ";
+    $query = "UPDATE  customer  SET  cus_name =?, cus_mobile =?, cus_email=?, cus_password = ?, cus_adr = ?  WHERE cus_id = ? ";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('sssss', $sup_name, $sup_mobile, $sup_email, $sup_password, $sup_id);
+    $rc = $stmt->bind_param('sssssss', $cus_name, $cus_mobile, $cus_email, $cus_password, $cus_adr, $cus_id);
     $stmt->execute();
 
     if ($stmt) {
-        $success = "$sup_name Updated";
+        $success = "$cus_name Updated";
     } else {
         $info = "Please Try Again Or Try Later";
     }
@@ -83,13 +84,13 @@ if (isset($_POST['update_supplier'])) {
 /* Delete Supplier */
 if (isset($_GET['delete'])) {
     $delete = $_GET['delete'];
-    $adn = "DELETE FROM supplier WHERE sup_id=?";
+    $adn = "DELETE FROM customer WHERE cus_id=?";
     $stmt = $mysqli->prepare($adn);
     $stmt->bind_param('s', $delete);
     $stmt->execute();
     $stmt->close();
     if ($stmt) {
-        $success = "Deleted" && header("refresh:1; url=suppliers");
+        $success = "Deleted" && header("refresh:1; url=customers");
     } else {
         $info = "Please Try Again Or Try Later";
     }
@@ -114,13 +115,13 @@ require_once('../partials/head.php');
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-bold">Suppliers</h1>
+                            <h1 class="m-0 text-bold">Customers</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
                                 <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Suppliers</li>
+                                <li class="breadcrumb-item active">Customers</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -130,7 +131,7 @@ require_once('../partials/head.php');
             <section class="content">
                 <div class="container-fluid">
                     <div class="text-right">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add_modal">Add Supplier</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add_modal">Add Customer</button>
                     </div>
                     <hr>
                     <!-- Add Modal -->
@@ -149,24 +150,28 @@ require_once('../partials/head.php');
                                             <div class="row">
                                                 <div class="form-group col-md-6">
                                                     <label for="">Name</label>
-                                                    <input type="text" required name="sup_name" class="form-control">
+                                                    <input type="text" required name="cus_name" class="form-control">
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="">Phone Number</label>
-                                                    <input type="text" required name="sup_mobile" class="form-control">
+                                                    <input type="text" required name="cus_mobile" class="form-control">
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="">Email</label>
-                                                    <input type="text" required name="sup_email" class="form-control">
+                                                    <input type="text" required name="cus_email" class="form-control">
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="">Password</label>
-                                                    <input type="text" required name="sup_password" class="form-control">
+                                                    <input type="text" required name="cus_password" class="form-control">
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <label for="">Address</label>
+                                                    <textarea rows="3" type="text" required name="cus_adr" class="form-control"></textarea>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="text-right">
-                                            <button type="submit" name="add_supplier" class="btn btn-primary">Submit</button>
+                                            <button type="submit" name="add_customer" class="btn btn-primary">Submit</button>
                                         </div>
                                     </form>
                                 </div>
