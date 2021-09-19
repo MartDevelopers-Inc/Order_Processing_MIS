@@ -292,7 +292,32 @@ require_once('../partials/head.php');
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body">
-
+                                                                <form method="post" enctype="multipart/form-data" role="form">
+                                                                    <div class="card-body">
+                                                                        <div class="row">
+                                                                            <div class="form-group col-md-6">
+                                                                                <label for="">Order Quantity </label>
+                                                                                <input type="text" required name="o_quantity" value="<?php echo $orders->o_quantity; ?>" class="form-control">
+                                                                                <input type="hidden" required name="o_id" value="<?php echo $orders->o_id; ?>" class="form-control">
+                                                                            </div>
+                                                                            <div class="form-group col-md-6">
+                                                                                <label for="">Order Status </label>
+                                                                                <select type="text" required name="o_status" class="form-control">
+                                                                                    <option><?php echo $order->o_status; ?></option>
+                                                                                    <option>Pending</option>
+                                                                                    <option>Processed</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="form-group col-md-12">
+                                                                                <label for="">Order Details</label>
+                                                                                <textarea rows="3" type="text" required name="o_details" class="form-control"><?php echo $orders->o_details; ?></textarea>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="text-right">
+                                                                        <button type="submit" name="update_order" class="btn btn-primary">Submit</button>
+                                                                    </div>
+                                                                </form>
                                                             </div>
                                                         </div>
                                                     </div>
