@@ -237,7 +237,7 @@ require_once('../partials/head.php');
                                                                             <div class="form-group col-md-6">
                                                                                 <label for="">Address</label>
                                                                                 <input type="text" required name="sa_adr" value="<?php echo $supplier->sa_adr; ?>" class="form-control">
-                                                                                <input type="hidden" value="<?php echo $supplier->sa_id; ?>" required name="sup_id" class="form-control">
+                                                                                <input type="hidden" value="<?php echo $supplier->sa_id; ?>" required name="sa_id" class="form-control">
                                                                             </div>
                                                                         </div>
                                                                     </div>
