@@ -49,7 +49,7 @@ if (isset($_POST['add_customer'])) {
     } else {
         $query = "INSERT INTO customer (cus_name, cus_mobile, cus_email, cus_password, cus_adr) VALUES(?,?,?,?,?) ";
         $stmt = $mysqli->prepare($query);
-        $rc = $stmt->bind_param('ssss', $cus_name, $cus_mobile, $cus_email, $cus_password, $cus_adr);
+        $rc = $stmt->bind_param('sssss', $cus_name, $cus_mobile, $cus_email, $cus_password, $cus_adr);
         $stmt->execute();
 
         if ($stmt) {
@@ -71,7 +71,7 @@ if (isset($_POST['update_customer'])) {
 
     $query = "UPDATE  customer  SET  cus_name =?, cus_mobile =?, cus_email=?, cus_password = ?, cus_adr = ?  WHERE cus_id = ? ";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('sssssss', $cus_name, $cus_mobile, $cus_email, $cus_password, $cus_adr, $cus_id);
+    $rc = $stmt->bind_param('ssssss', $cus_name, $cus_mobile, $cus_email, $cus_password, $cus_adr, $cus_id);
     $stmt->execute();
 
     if ($stmt) {
@@ -241,14 +241,12 @@ require_once('../partials/head.php');
                                                                             </div>
                                                                             <div class="form-group col-md-6">
                                                                                 <label for="">Password</label>
-                                                                                <input type="text" required name="sup_password" class="form-control">
+                                                                                <input type="text" required name="cus_password" class="form-control">
                                                                                 <input type="hidden" value="<?php echo $supplier->cus_id; ?>" required name="cus_id" class="form-control">
                                                                             </div>
-                                                                            <div class="form-group col-md-6">
+                                                                            <div class="form-group col-md-12">
                                                                                 <label for="">Address</label>
-                                                                                <textarea type="text" value="" required name="cus_adr" class="form-control">
-                                                                                    <?php echo $supplier->cus_adr; ?>
-                                                                                </textarea>
+                                                                                <textarea type="text" value="" required name="cus_adr" class="form-control"><?php echo $supplier->cus_adr; ?></textarea>
                                                                             </div>
                                                                         </div>
                                                                     </div>
