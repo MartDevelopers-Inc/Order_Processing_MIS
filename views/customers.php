@@ -187,32 +187,34 @@ require_once('../partials/head.php');
                                         <th>Name</th>
                                         <th>Contacts </th>
                                         <th>Email</th>
+                                        <th>Address</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $ret = "SELECT * FROM supplier ";
+                                    $ret = "SELECT * FROM customer ";
                                     $stmt = $mysqli->prepare($ret);
                                     $stmt->execute(); //ok
                                     $res = $stmt->get_result();
                                     while ($supplier = $res->fetch_object()) {
                                     ?>
                                         <tr>
-                                            <td><?php echo $supplier->sup_name; ?></td>
-                                            <td><?php echo $supplier->sup_mobile; ?></td>
-                                            <td><?php echo $supplier->sup_email; ?></td>
+                                            <td><?php echo $supplier->cus_name; ?></td>
+                                            <td><?php echo $supplier->cus_mobile; ?></td>
+                                            <td><?php echo $supplier->cus_email; ?></td>
+                                            <td><?php echo $supplier->cus_adr; ?></td>
                                             <td>
-                                                <a class="badge badge-primary" data-toggle="modal" href="#edit-<?php echo $supplier->sup_id; ?>">
+                                                <a class="badge badge-primary" data-toggle="modal" href="#edit-<?php echo $supplier->cus_id; ?>">
                                                     <i class="fas fa-edit"></i>
                                                     Update
                                                 </a>
-                                                <a class="badge badge-danger" data-toggle="modal" href="#delete-<?php echo $supplier->sup_id; ?>">
+                                                <a class="badge badge-danger" data-toggle="modal" href="#delete-<?php echo $supplier->cus_id; ?>">
                                                     <i class="fas fa-trash"></i>
                                                     Delete
                                                 </a>
                                                 <!-- Update Modal -->
-                                                <div class="modal fade" id="edit-<?php echo $supplier->sup_id; ?>">
+                                                <div class="modal fade" id="edit-<?php echo $supplier->cus_id; ?>">
                                                     <div class="modal-dialog  modal-lg">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -227,25 +229,31 @@ require_once('../partials/head.php');
                                                                         <div class="row">
                                                                             <div class="form-group col-md-6">
                                                                                 <label for="">Name</label>
-                                                                                <input type="text" value="<?php echo $supplier->sup_name; ?>" required name="sup_name" class="form-control">
+                                                                                <input type="text" value="<?php echo $supplier->cus_name; ?>" required name="cus_name" class="form-control">
                                                                             </div>
                                                                             <div class="form-group col-md-6">
                                                                                 <label for="">Phone Number</label>
-                                                                                <input type="text" value="<?php echo $supplier->sup_mobile; ?>" required name="sup_mobile" class="form-control">
+                                                                                <input type="text" value="<?php echo $supplier->cus_mobile; ?>" required name="cus_mobile" class="form-control">
                                                                             </div>
                                                                             <div class="form-group col-md-6">
                                                                                 <label for="">Email</label>
-                                                                                <input type="text" value="<?php echo $supplier->sup_email; ?>" required name="sup_email" class="form-control">
+                                                                                <input type="text" value="<?php echo $supplier->cus_email; ?>" required name="cus_email" class="form-control">
                                                                             </div>
                                                                             <div class="form-group col-md-6">
                                                                                 <label for="">Password</label>
                                                                                 <input type="text" required name="sup_password" class="form-control">
-                                                                                <input type="hidden" value="<?php echo $supplier->sup_id; ?>" required name="sup_id" class="form-control">
+                                                                                <input type="hidden" value="<?php echo $supplier->cus_id; ?>" required name="cus_id" class="form-control">
+                                                                            </div>
+                                                                            <div class="form-group col-md-6">
+                                                                                <label for="">Address</label>
+                                                                                <textarea type="text" value="" required name="cus_adr" class="form-control">
+                                                                                    <?php echo $supplier->cus_adr; ?>
+                                                                                </textarea>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="text-right">
-                                                                        <button type="submit" name="update_supplier" class="btn btn-primary">Submit</button>
+                                                                        <button type="submit" name="update_customer" class="btn btn-primary">Submit</button>
                                                                     </div>
                                                                 </form>
                                                             </div>
