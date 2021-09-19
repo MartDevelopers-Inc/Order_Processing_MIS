@@ -60,19 +60,20 @@ if (isset($_POST['add_supplier'])) {
 }
 
 /* Update Supplier */
-if (isset($_POST['update_product'])) {
-    $p_name = $_POST['p_name'];
-    $p_details = $_POST['p_details'];
-    $p_quantity = $_POST['p_quantity'];
-    $p_id = $_POST['p_id'];
+if (isset($_POST['update_supplier'])) {
+    $sup_name = $_POST['sup_name'];
+    $sup_mobile = $_POST['sup_mobile'];
+    $sup_email = $_POST['sup_email'];
+    $sup_password = sha1(md5($_POST['sup_password']));
+    $sup_id = $_POST['sup_id'];
 
-    $query = "UPDATE  products SET  p_name =?, p_details =?, p_quantity=? WHERE p_id = ? ";
+    $query = "UPDATE  supplier  SET  sup_name =?, sup_mobile =?, sup_email=?, sup_password = ? WHERE sup_id = ? ";
     $stmt = $mysqli->prepare($query);
-    $rc = $stmt->bind_param('ssss', $p_name, $p_details, $p_quantity, $p_id);
+    $rc = $stmt->bind_param('sssss', $sup_name, $sup_mobile, $sup_email, $sup_password, $sup_id);
     $stmt->execute();
 
     if ($stmt) {
-        $success = "$p_name Updated";
+        $success = "$sup_name Updated";
     } else {
         $info = "Please Try Again Or Try Later";
     }
