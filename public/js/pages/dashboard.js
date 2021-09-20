@@ -1,3 +1,13 @@
+/* 
+ *  This is the default license template.
+ *  
+ *  File: dashboard.js
+ *  Author: root
+ *  Copyright (c) 2021 root
+ *  
+ *  To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+ */
+
 /*
  * Author: Abdullah A Almsaeed
  * Date: 4 Jan 2014

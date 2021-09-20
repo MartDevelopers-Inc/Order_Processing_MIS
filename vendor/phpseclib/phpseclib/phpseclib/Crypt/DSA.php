@@ -1,4 +1,13 @@
 <?php
+/* 
+ *  This is the default license template.
+ *  
+ *  File: DSA.php
+ *  Author: root
+ *  Copyright (c) 2021 root
+ *  
+ *  To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+ */
 
 /**
  * Pure-PHP FIPS 186-4 compliant implementation of DSA.

@@ -1,3 +1,13 @@
+__='
+   This is the default license template.
+   
+   File: cleanup.sh
+   Author: root
+   Copyright (c) 2021 root
+   
+   To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+'
+
 #!/usr/bin/env bash
 #
 # Shared cleanup routines between different steps

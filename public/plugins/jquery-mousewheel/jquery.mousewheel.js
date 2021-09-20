@@ -1,3 +1,13 @@
+/* 
+ *  This is the default license template.
+ *  
+ *  File: jquery.mousewheel.js
+ *  Author: root
+ *  Copyright (c) 2021 root
+ *  
+ *  To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+ */
+
 /*!
  * jQuery Mousewheel 3.1.13
  *

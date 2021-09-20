@@ -1,4 +1,13 @@
 <?php
+/* 
+ *  This is the default license template.
+ *  
+ *  File: sect409k1.php
+ *  Author: root
+ *  Copyright (c) 2021 root
+ *  
+ *  To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+ */
 
 /**
  * sect409k1

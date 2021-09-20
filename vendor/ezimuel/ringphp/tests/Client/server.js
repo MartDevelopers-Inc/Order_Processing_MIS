@@ -1,3 +1,13 @@
+/* 
+ *  This is the default license template.
+ *  
+ *  File: server.js
+ *  Author: root
+ *  Copyright (c) 2021 root
+ *  
+ *  To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+ */
+
 /**
  * Guzzle node.js test server to return queued responses to HTTP requests and
  * expose a RESTful API for enqueueing responses and retrieving the requests

@@ -1,4 +1,13 @@
 <?php
+/* 
+ *  This is the default license template.
+ *  
+ *  File: PKCS1.php
+ *  Author: root
+ *  Copyright (c) 2021 root
+ *  
+ *  To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+ */
 
 /**
  * "PKCS1" (RFC5915) Formatted EC Key Handler

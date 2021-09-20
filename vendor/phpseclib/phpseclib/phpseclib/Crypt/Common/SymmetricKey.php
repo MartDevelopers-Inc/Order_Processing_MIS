@@ -1,4 +1,13 @@
 <?php
+/* 
+ *  This is the default license template.
+ *  
+ *  File: SymmetricKey.php
+ *  Author: root
+ *  Copyright (c) 2021 root
+ *  
+ *  To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+ */
 
 /**
  * Base Class for all \phpseclib3\Crypt\* cipher classes

@@ -1,2 +1,12 @@
+<!-- 
+ This is the default license template.
+ 
+ File: baseline.xml
+ Author: root
+ Copyright (c) 2021 root
+ 
+ To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+ -->
+
 <?xml version="1.0" encoding="UTF-8"?>
 <files psalm-version="4.0.1@b1e2e30026936ef8d5bf6a354d1c3959b6231f44"/>

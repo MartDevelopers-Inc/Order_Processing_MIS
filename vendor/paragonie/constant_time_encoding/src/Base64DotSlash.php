@@ -1,4 +1,14 @@
 <?php
+/* 
+ *  This is the default license template.
+ *  
+ *  File: Base64DotSlash.php
+ *  Author: root
+ *  Copyright (c) 2021 root
+ *  
+ *  To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+ */
+
 declare(strict_types=1);
 namespace ParagonIE\ConstantTime;
 

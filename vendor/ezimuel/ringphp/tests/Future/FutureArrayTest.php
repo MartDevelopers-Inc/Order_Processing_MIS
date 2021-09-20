@@ -1,4 +1,14 @@
 <?php
+/* 
+ *  This is the default license template.
+ *  
+ *  File: FutureArrayTest.php
+ *  Author: root
+ *  Copyright (c) 2021 root
+ *  
+ *  To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+ */
+
 namespace GuzzleHttp\Tests\Ring\Future;
 
 use GuzzleHttp\Ring\Future\FutureArray;

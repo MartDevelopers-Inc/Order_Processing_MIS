@@ -1,4 +1,14 @@
 <?php
+/* 
+ *  This is the default license template.
+ *  
+ *  File: CurlFactoryTest.php
+ *  Author: root
+ *  Copyright (c) 2021 root
+ *  
+ *  To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+ */
+
 // Override curl_setopt_array() to get the last set curl options
 namespace GuzzleHttp\Ring\Client {
     function curl_setopt_array($handle, array $options) {

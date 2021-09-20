@@ -1,4 +1,13 @@
-/* This is a compiled file, to make changes persist, consider editing under the templates directory */
+/* 
+ *  This is the default license template.
+ *  
+ *  File: pace-theme-flat-top.css
+ *  Author: root
+ *  Copyright (c) 2021 root
+ *  
+ *  To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+ */
+
 .pace {
   -webkit-pointer-events: none;
   pointer-events: none;

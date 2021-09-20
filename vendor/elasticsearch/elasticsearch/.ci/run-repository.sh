@@ -1,3 +1,13 @@
+__='
+   This is the default license template.
+   
+   File: run-repository.sh
+   Author: root
+   Copyright (c) 2021 root
+   
+   To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+'
+
 #!/usr/bin/env bash
 # parameters are available to this script
 

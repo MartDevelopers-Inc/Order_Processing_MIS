@@ -1,3 +1,13 @@
+__='
+   This is the default license template.
+   
+   File: wait-for-container.sh
+   Author: root
+   Copyright (c) 2021 root
+   
+   To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+'
+
 #!/usr/bin/env bash
 #
 # Exposes a routine scripts can call to wait for a container if that container set up a health command

@@ -1,3 +1,14 @@
+<?php
+/* 
+ *  This is the default license template.
+ *  
+ *  File: RuntimeException.php
+ *  Author: root
+ *  Copyright (c) 2021 root
+ *  
+ *  To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+ */
+
 <?php declare(strict_types=1);
 /*
  * This file is part of phpunit/php-text-template.

@@ -1,4 +1,14 @@
 <?php
+/* 
+ *  This is the default license template.
+ *  
+ *  File: EncodingTest.php
+ *  Author: root
+ *  Copyright (c) 2021 root
+ *  
+ *  To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+ */
+
 use \ParagonIE\ConstantTime\Base32;
 use \ParagonIE\ConstantTime\Base32Hex;
 use \ParagonIE\ConstantTime\Base64;

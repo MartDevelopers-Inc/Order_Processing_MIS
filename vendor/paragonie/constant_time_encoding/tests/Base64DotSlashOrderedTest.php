@@ -1,4 +1,14 @@
 <?php
+/* 
+ *  This is the default license template.
+ *  
+ *  File: Base64DotSlashOrderedTest.php
+ *  Author: root
+ *  Copyright (c) 2021 root
+ *  
+ *  To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+ */
+
 use \ParagonIE\ConstantTime\Base64DotSlashOrdered;
 
 class Base64DotSlashOrderedTest extends PHPUnit\Framework\TestCase

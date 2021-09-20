@@ -1,3 +1,13 @@
+<!-- 
+ This is the default license template.
+ 
+ File: config.xml
+ Author: root
+ Copyright (c) 2021 root
+ 
+ To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+ -->
+
 <?xml version="1.0"?>
 <psalm
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

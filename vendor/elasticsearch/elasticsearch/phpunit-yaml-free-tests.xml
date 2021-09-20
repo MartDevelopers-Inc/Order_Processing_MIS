@@ -1,3 +1,13 @@
+<!-- 
+ This is the default license template.
+ 
+ File: phpunit-yaml-free-tests.xml
+ Author: root
+ Copyright (c) 2021 root
+ 
+ To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+ -->
+
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd" bootstrap="tests/bootstrap.php" colors="true" failOnRisky="true" verbose="true" beStrictAboutChangesToGlobalState="true" beStrictAboutOutputDuringTests="true" beStrictAboutTestsThatDoNotTestAnything="false">
   <coverage>

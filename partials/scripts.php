@@ -1,3 +1,14 @@
+<?php
+/* 
+ *  This is the default license template.
+ *  
+ *  File: scripts.php
+ *  Author: root
+ *  Copyright (c) 2021 root
+ *  
+ *  To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+ */
+
 <!-- jQuery -->
 <script src="../public/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI -->

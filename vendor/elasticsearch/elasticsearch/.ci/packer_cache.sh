@@ -1,3 +1,13 @@
+__='
+   This is the default license template.
+   
+   File: packer_cache.sh
+   Author: root
+   Copyright (c) 2021 root
+   
+   To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+'
+
 #!/usr/bin/env bash
 
 source /usr/local/bin/bash_standard_lib.sh

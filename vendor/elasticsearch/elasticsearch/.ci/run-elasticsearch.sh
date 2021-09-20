@@ -1,3 +1,13 @@
+__='
+   This is the default license template.
+   
+   File: run-elasticsearch.sh
+   Author: root
+   Copyright (c) 2021 root
+   
+   To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
+'
+
 #!/usr/bin/env bash
 #
 # Launch one or more Elasticsearch nodes via the Docker image,
