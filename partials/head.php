@@ -1,13 +1,4 @@
 <?php
-/* 
- *  This is the default license template.
- *  
- *  File: head.php
- *  Author: root
- *  Copyright (c) 2021 root
- *  
- *  To edit this license information: Press Ctrl+Shift+P and press 'Create new License Template...'.
- */
 
 /*
  * Created on Sat Sep 04 2021
