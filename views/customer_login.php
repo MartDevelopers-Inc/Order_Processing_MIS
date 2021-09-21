@@ -50,8 +50,35 @@ if (isset($_POST['Login'])) {
 }
 
 /* Customer Sign In */
+if (isset($_POST['add_customer'])) {
 
+    $cus_name = $_POST['cus_name'];
+    $cus_mobile = $_POST['cus_mobile'];
+    $cus_email = $_POST['cus_email'];
+    $cus_adr = $_POST['cus_adr'];
+    $cus_password = sha1(md5($_POST['cus_password']));
 
+    /* Prevent Double Entries */
+    $sql = "SELECT * FROM  customer WHERE cus_email = '$cus_email'   ";
+    $res = mysqli_query($mysqli, $sql);
+    if (mysqli_num_rows($res) > 0) {
+        $row = mysqli_fetch_assoc($res);
+        if ($cus_email == $row['cus_email']) {
+            $err =  "$cus_email Already Exists";
+        }
+    } else {
+        $query = "INSERT INTO customer (cus_name, cus_mobile, cus_email, cus_password, cus_adr) VALUES(?,?,?,?,?) ";
+        $stmt = $mysqli->prepare($query);
+        $rc = $stmt->bind_param('sssss', $cus_name, $cus_mobile, $cus_email, $cus_password, $cus_adr);
+        $stmt->execute();
+
+        if ($stmt) {
+            $success = "$cus_name Added, Proceed To Login";
+        } else {
+            $info = "Please Try Again Or Try Later";
+        }
+    }
+}
 
 require_once('../partials/head.php');
 ?>
