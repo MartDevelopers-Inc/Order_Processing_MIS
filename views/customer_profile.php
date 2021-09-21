@@ -30,6 +30,7 @@ session_start();
 require_once('../config/config.php');
 require_once('../config/checklogin.php');
 customer_checklogin();
+
 $customer = $_SESSION['cus_id'];
 
 /* Update Customer Profile */
