@@ -59,11 +59,11 @@ function suppplier_checklogin()
 /* Customer Checklogin */
 function customer_checklogin()
 {
-	if ((strlen($_SESSION['c_id']) == 0)) {
+	if ((strlen($_SESSION['cus_id']) == 0)) {
 		$host = $_SERVER['HTTP_HOST'];
 		$uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
 		$extra = "../index";
-		$_SESSION["c_id"] = "";
+		$_SESSION["cus_id"] = "";
 		header("Location: http://$host$uri/$extra");
 	}
 }

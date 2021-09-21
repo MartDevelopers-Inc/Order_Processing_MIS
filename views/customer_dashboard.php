@@ -70,7 +70,7 @@ require_once('../partials/head.php');
                     <div class="row">
 
 
-                        <div class="col-12 col-sm-6 col-md-6">
+                        <div class="col-12 col-sm-4 col-md-4">
                             <div class="info-box mb-3">
                                 <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
 
@@ -83,13 +83,25 @@ require_once('../partials/head.php');
                             <!-- /.info-box -->
                         </div>
                         <!-- /.col -->
-                        <div class="col-12 col-sm-6 col-md-6">
+                        <div class="col-12 col-sm-4 col-md-4">
                             <div class="info-box mb-3">
                                 <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-check"></i></span>
 
                                 <div class="info-box-content">
                                     <span class="info-box-text">Processed Orders</span>
                                     <span class="info-box-number"><?php echo $orders_processed; ?></span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                        <div class="col-12 col-sm-4 col-md-4">
+                            <div class="info-box mb-3">
+                                <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-check"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Total Orders</span>
+                                    <span class="info-box-number"><?php echo $orders_all ?></span>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
