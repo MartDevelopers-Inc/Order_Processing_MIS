@@ -78,21 +78,16 @@ require_once('../partials/head.php');
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-4">
-                            <div class="text-right">
+                        <div class="col-12">
+                            <div class="text-center">
                                 <button type="submit" name="Login" class="btn btn-primary btn-block">Sign In</button>
                             </div>
                         </div>
                     </div>
                 </form>
+                <hr>
                 <p class="mb-1">
                     <a href="customer_forget_password">I Forgot My Password</a>
-                </p>
-                <p class="mb-1">
-                    <a href="customer_login">Sign In As Customer</a>
-                </p>
-                <p class="mb-1">
-                    <a href="supplier_login">Sign In As Supplier</a>
                 </p>
             </div>
         </div>
