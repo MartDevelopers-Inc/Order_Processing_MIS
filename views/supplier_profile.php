@@ -93,7 +93,7 @@ require_once('../partials/head.php');
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <?php require_once('../partials/customer_sidebar.php');
+        <?php require_once('../partials/supplier_sidebar.php');
         $ret = "SELECT * FROM supplier WHERE sup_id = '$supplier' ";
         $stmt = $mysqli->prepare($ret);
         $stmt->execute(); //ok
