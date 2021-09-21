@@ -49,6 +49,10 @@ if (isset($_POST['Login'])) {
     }
 }
 
+/* Customer Sign In */
+
+
+
 require_once('../partials/head.php');
 ?>
 
@@ -89,9 +93,57 @@ require_once('../partials/head.php');
                 <p class="mb-1">
                     <a href="customer_forget_password">I Forgot My Password</a>
                 </p>
+                <p class="mb-1">
+                    <a href="#add_modal" data-toggle="modal">I Dont Have Account</a>
+                </p>
             </div>
         </div>
     </div>
+    <!-- Customer Sign In -->
+    <div class="modal fade" id="add_modal">
+        <div class="modal-dialog  modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Sign Up</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" enctype="multipart/form-data" role="form">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="">Name</label>
+                                    <input type="text" required name="cus_name" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="">Phone Number</label>
+                                    <input type="text" required name="cus_mobile" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="">Email</label>
+                                    <input type="email" required name="cus_email" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="">Password</label>
+                                    <input type="password" required name="cus_password" class="form-control">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="">Address</label>
+                                    <textarea rows="3" type="text" required name="cus_adr" class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <button type="submit" name="add_customer" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Customer Sign In Modal -->
     <?php require_once('../partials/scripts.php'); ?>
 </body>
 
