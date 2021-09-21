@@ -33,7 +33,7 @@ customer_checklogin();
 $customer = $_SESSION['cus_id'];
 
 /* Update Customer Profile */
-if (isset($_POST['update_customer'])) {
+if (isset($_POST['update_profile'])) {
     $cus_name = $_POST['cus_name'];
     $cus_mobile = $_POST['cus_mobile'];
     $cus_email = $_POST['cus_email'];
@@ -93,13 +93,12 @@ require_once('../partials/head.php');
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <?php require_once('../partials/sidebar.php');
-        $admin_id = $_SESSION['admin_id'];
-        $ret = "SELECT * FROM admin WHERE admin_id = '$admin_id' ";
+        <?php require_once('../partials/customer_sidebar.php');
+        $ret = "SELECT * FROM customer WHERE cus_id = '$customer' ";
         $stmt = $mysqli->prepare($ret);
         $stmt->execute(); //ok
         $res = $stmt->get_result();
-        while ($admin = $res->fetch_object()) {
+        while ($cus = $res->fetch_object()) {
         ?>
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
@@ -108,12 +107,12 @@ require_once('../partials/head.php');
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Profile</h1>
+                                <h1>Manage Profile</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
-                                    <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
-                                    <li class="breadcrumb-item active">User Profile</li>
+                                    <li class="breadcrumb-item"><a href="customer_dashboard">Home</a></li>
+                                    <li class="breadcrumb-item active">Profile</li>
                                 </ol>
                             </div>
                         </div>
@@ -124,41 +123,62 @@ require_once('../partials/head.php');
                 <section class="content">
                     <div class="container-fluid">
                         <div class="row">
+
                             <div class="col-md-12">
                                 <div class="card card-primary card-outline">
                                     <div class="card-body">
-                                        <form class="" method="POST">
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Email</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" required name="admin_email" value="<?php echo $admin->admin_email; ?>" class="form-control">
+                                        <form method="post" enctype="multipart/form-data" role="form">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="form-group col-md-4">
+                                                        <label for="">Name</label>
+                                                        <input type="text" value="<?php echo $cus->cus_name; ?>" required name="cus_name" class="form-control">
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label for="">Phone Number</label>
+                                                        <input type="text" value="<?php echo $cus->cus_mobile; ?>" required name="cus_mobile" class="form-control">
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label for="">Email</label>
+                                                        <input type="text" value="<?php echo $cus->cus_email; ?>" required name="cus_email" class="form-control">
+                                                    </div>
+                                                    <div class="form-group col-md-12">
+                                                        <label for="">Address</label>
+                                                        <textarea type="text" value="" required name="cus_adr" class="form-control"><?php echo $cus->cus_adr; ?></textarea>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Old Password</label>
-                                                <div class="col-sm-10">
-                                                    <input type="password" required name="old_password" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">New Password</label>
-                                                <div class="col-sm-10">
-                                                    <input type="password" required name="new_password" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Confirm Password</label>
-                                                <div class="col-sm-10">
-                                                    <input type="password" required name="confirm_password" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row ">
-                                                <div class="offset-sm-2 text-right col-sm-10">
-                                                    <button type="submit" name="Update_Auth" class="btn btn-danger">Submit</button>
-                                                </div>
+                                            <div class="text-right">
+                                                <button type="submit" name="update_profile" class="btn btn-primary">Submit</button>
                                             </div>
                                         </form>
-
+                                    </div><!-- /.card-body -->
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="card card-primary card-outline">
+                                    <div class="card-body">
+                                        <form method="post" enctype="multipart/form-data" role="form">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="form-group col-md-12">
+                                                        <label for="">Old Password</label>
+                                                        <input type="password" required name="old_password" class="form-control">
+                                                    </div>
+                                                    <div class="form-group col-md-12">
+                                                        <label for="">New Password</label>
+                                                        <input type="password" required name="new_password" class="form-control">
+                                                    </div>
+                                                    <div class="form-group col-md-12">
+                                                        <label for="">Confirm New Password</label>
+                                                        <input type="passowrd" required name="confirm_password" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-right">
+                                                <button type="submit" name="Update_Auth" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </form>
                                     </div><!-- /.card-body -->
                                 </div>
                             </div>
