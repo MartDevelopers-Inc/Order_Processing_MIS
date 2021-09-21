@@ -58,7 +58,7 @@ require_once('../partials/head.php');
                                 <li class="breadcrumb-item active">Orders - Reports</li>
                             </ol>
                         </div><!-- /.col -->
-                    </div><!-- /.row -->
+                    </div><!-- /.row 
                 </div>
             </div>
 
