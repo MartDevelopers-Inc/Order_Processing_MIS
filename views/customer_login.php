@@ -31,19 +31,19 @@ require_once('../config/codeGen.php');
 
 /* Login */
 if (isset($_POST['Login'])) {
-    $admin_email = $_POST['admin_email'];
-    $admin_password = sha1(md5($_POST['admin_password']));
+    $cus_email = $_POST['cus_email'];
+    $cus_password = sha1(md5($_POST['cus_password']));
 
-    $stmt = $mysqli->prepare("SELECT admin_email, admin_password, admin_id  FROM admin  WHERE admin_email =? AND admin_password =? ");
-    $stmt->bind_param('ss', $admin_email, $admin_password);
+    $stmt = $mysqli->prepare("SELECT cus_email, cus_password, cus_id  FROM customer  WHERE cus_email =? AND cus_password =? ");
+    $stmt->bind_param('ss', $cus_email, $cus_password);
     $stmt->execute(); //execute bind
 
-    $stmt->bind_result($admin_email, $admin_password, $admin_id);
+    $stmt->bind_result($cus_email, $cus_password, $cus_id);
     $rs = $stmt->fetch();
-    $_SESSION['admin_id'] = $admin_id;
+    $_SESSION['cus_id'] = $cus_id;
 
     if ($rs) {
-        header("location:dashboard");
+        header("location:customer_dashboard");
     } else {
         $err = "Login Failed, Please Check Your Credentials";
     }
@@ -58,11 +58,11 @@ require_once('../partials/head.php');
         <?php require_once('../partials/auth.php'); ?>
         <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Sign in to start your administrator session</p>
+                <p class="login-box-msg">Sign in to start your customer session</p>
 
                 <form method="post">
                     <div class="input-group mb-3">
-                        <input type="text" name="admin_email" required class="form-control" placeholder="Email ">
+                        <input type="text" name="cus_email" required class="form-control" placeholder="Email ">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user-tag"></span>
@@ -70,7 +70,7 @@ require_once('../partials/head.php');
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" name="admin_password" required class="form-control" placeholder="Password">
+                        <input type="password" name="cus_password" required class="form-control" placeholder="Password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -86,7 +86,7 @@ require_once('../partials/head.php');
                     </div>
                 </form>
                 <p class="mb-1">
-                    <a href="forget_password">I Forgot My Password</a>
+                    <a href="customer_forget_password">I Forgot My Password</a>
                 </p>
                 <p class="mb-1">
                     <a href="customer_login">Sign In As Customer</a>
