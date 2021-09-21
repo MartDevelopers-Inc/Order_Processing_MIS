@@ -64,7 +64,7 @@ if (isset($_POST['Update_Auth'])) {
     if (mysqli_num_rows($res) > 0) {
         $row = mysqli_fetch_assoc($res);
 
-        if ($old_password != $row['admin_password']) {
+        if ($old_password != $row['cus_password']) {
             $err =  "Please Enter Correct Old Password";
         } elseif ($new_password != $confirm_password) {
             $err = "Confirmation Password Does Not Match";
@@ -126,6 +126,9 @@ require_once('../partials/head.php');
 
                             <div class="col-md-12">
                                 <div class="card card-primary card-outline">
+                                    <div class="text-center">
+                                        <h4>Update Profile</h4>
+                                    </div>
                                     <div class="card-body">
                                         <form method="post" enctype="multipart/form-data" role="form">
                                             <div class="card-body">
@@ -149,7 +152,7 @@ require_once('../partials/head.php');
                                                 </div>
                                             </div>
                                             <div class="text-right">
-                                                <button type="submit" name="update_profile" class="btn btn-primary">Submit</button>
+                                                <button type="submit" name="update_profile" class="btn btn-primary">Update Profile</button>
                                             </div>
                                         </form>
                                     </div><!-- /.card-body -->
@@ -157,6 +160,9 @@ require_once('../partials/head.php');
                             </div>
                             <div class="col-md-12">
                                 <div class="card card-primary card-outline">
+                                    <div class="text-center">
+                                        <h4>Change Password</h4>
+                                    </div>
                                     <div class="card-body">
                                         <form method="post" enctype="multipart/form-data" role="form">
                                             <div class="card-body">
@@ -171,12 +177,12 @@ require_once('../partials/head.php');
                                                     </div>
                                                     <div class="form-group col-md-12">
                                                         <label for="">Confirm New Password</label>
-                                                        <input type="passowrd" required name="confirm_password" class="form-control">
+                                                        <input type="password" required name="confirm_password" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="text-right">
-                                                <button type="submit" name="Update_Auth" class="btn btn-primary">Submit</button>
+                                                <button type="submit" name="Update_Auth" class="btn btn-primary">Change Password</button>
                                             </div>
                                         </form>
                                     </div><!-- /.card-body -->
