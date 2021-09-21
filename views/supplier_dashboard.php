@@ -71,7 +71,7 @@ require_once('../partials/head.php');
                         <!-- fix for small devices only -->
                         <div class="clearfix hidden-md-up"></div>
 
-                        <div class="col-12 col-sm-6 col-md-3">
+                        <div class="col-12 col-sm-6 col-md-6">
                             <div class="info-box mb-3">
                                 <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
 
@@ -84,7 +84,7 @@ require_once('../partials/head.php');
                             <!-- /.info-box -->
                         </div>
                         <!-- /.col -->
-                        <div class="col-12 col-sm-6 col-md-3">
+                        <div class="col-12 col-sm-6 col-md-6">
                             <div class="info-box mb-3">
                                 <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-check"></i></span>
 

@@ -46,7 +46,7 @@ while ($sys = $res->fetch_object()) {
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                     <li class="nav-item">
-                        <a href="dashboard" class="nav-link">
+                        <a href="supplier_dashboard" class="nav-link">
                             <i class="nav-icon fas fa-home"></i>
                             <p>
                                 Home
@@ -54,7 +54,7 @@ while ($sys = $res->fetch_object()) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="profile" class="nav-link">
+                        <a href="supplier_profile" class="nav-link">
                             <i class="nav-icon fas fa-user-tag"></i>
                             <p>
                                 Profile
@@ -62,15 +62,7 @@ while ($sys = $res->fetch_object()) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="product_categories" class="nav-link">
-                            <i class="nav-icon fas fa-clipboard-list"></i>
-                            <p>
-                                Product Categories
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="products" class="nav-link">
+                        <a href="supplier_products" class="nav-link">
                             <i class="nav-icon fas fa-dice"></i>
                             <p>
                                 Products
@@ -78,97 +70,31 @@ while ($sys = $res->fetch_object()) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="suppliers" class="nav-link">
-                            <i class="nav-icon fas fa-briefcase"></i>
-                            <p>
-                                Suppliers
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="shipping_agents" class="nav-link">
-                            <i class="nav-icon fas fa-shipping-fast"></i>
-                            <p>
-                                Shipping Agents
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="customers" class="nav-link">
-                            <i class="nav-icon fas fa-users"></i>
-                            <p>
-                                Customers
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="orders" class="nav-link">
+                        <a href="supplier_orders" class="nav-link">
                             <i class="nav-icon fas fa-file-signature"></i>
                             <p>
                                 Orders
                             </p>
                         </a>
                     </li>
-                    <!-- <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-cogs"></i>
-                            <p>
-                                Settings
-                                <i class="fas fa-angle-left right"></i>
-                                <span class="badge badge-info right">2</span>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="settings_stmp_mailer" class="nav-link">
-                                    <i class="fas fa-angle-right nav-icon"></i>
-                                    <p>STMP Mailer</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="settings_system" class="nav-link">
-                                    <i class="fas fa-angle-right nav-icon"></i>
-                                    <p>System Settings</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li> -->
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
                                 Reports
                                 <i class="fas fa-angle-left right"></i>
-                                <span class="badge badge-info right">5</span>
+                                <span class="badge badge-info right">2</span>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="reports_inventory" class="nav-link">
+                                <a href="supplier_reports_inventory" class="nav-link">
                                     <i class="fas fa-angle-right nav-icon"></i>
                                     <p>Inventory</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="reports_suppliers" class="nav-link">
-                                    <i class="fas fa-angle-right nav-icon"></i>
-                                    <p>Suppliers</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="reports_customers" class="nav-link">
-                                    <i class="fas fa-angle-right nav-icon"></i>
-                                    <p>Customers</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="reports_shipping_agents" class="nav-link">
-                                    <i class="fas fa-angle-right nav-icon"></i>
-                                    <p>Shipping Agents</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="reports_orders" class="nav-link">
+                                <a href="supplier_reports_orders" class="nav-link">
                                     <i class="fas fa-angle-right nav-icon"></i>
                                     <p>Orders</p>
                                 </a>
@@ -176,7 +102,7 @@ while ($sys = $res->fetch_object()) {
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="logout" class="nav-link">
+                        <a href="supplier_logout" class="nav-link">
                             <i class="nav-icon fas fa-power-off"></i>
                             <p>
                                 Log Out

@@ -35,7 +35,7 @@ while ($sys = $res->fetch_object()) {
 ?>
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="home" class="brand-link">
+        <a href="" class="brand-link">
             <span class="brand-text font-weight-bold">FruitProcessing MIS</span>
         </a>
 
