@@ -34,16 +34,16 @@ if (isset($_POST['Login'])) {
     $sup_email = $_POST['sup_email'];
     $sup_password = sha1(md5($_POST['sup_password']));
 
-    $stmt = $mysqli->prepare("SELECT sup_email, cus_password, cus_id  FROM customer  WHERE cus_email =? AND cus_password =? ");
-    $stmt->bind_param('ss', $cus_email, $cus_password);
+    $stmt = $mysqli->prepare("SELECT sup_email, sup_password, sup_id  FROM supplier  WHERE sup_email =? AND sup_password =? ");
+    $stmt->bind_param('ss', $sup_email, $sup_password);
     $stmt->execute(); //execute bind
 
-    $stmt->bind_result($cus_email, $cus_password, $cus_id);
+    $stmt->bind_result($sup_email, $sup_password, $sup_id);
     $rs = $stmt->fetch();
-    $_SESSION['cus_id'] = $cus_id;
+    $_SESSION['sup_id'] = $sup_id;
 
     if ($rs) {
-        header("location:customer_dashboard");
+        header("location:supplier_dashboard");
     } else {
         $err = "Login Failed, Please Check Your Credentials";
     }
